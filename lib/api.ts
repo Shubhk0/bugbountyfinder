@@ -78,7 +78,23 @@ export async function fetchBugcrowdPrograms(): Promise<Program[]> {
     }
   ];
 }
-
+// addd
+export async function fetchPrograms(): Promise<Program[]> {
+  try {
+    // Fetch programs from both platforms
+    const [hackerOnePrograms, bugcrowdPrograms] = await Promise.all([
+      fetchHackerOnePrograms(),
+      fetchBugcrowdPrograms()
+    ]);
+    
+    // Combine programs from both platforms
+    return [...hackerOnePrograms, ...bugcrowdPrograms];
+  } catch (error) {
+    console.error('Error fetching bug bounty programs:', error);
+    return [];
+  }
+}
+//addded above
 // Function to filter out programs that require KYC or involve blockchain
 export function filterPrograms(programs: Program[]): Program[] {
   return programs.filter(program => !program.requiresKYC && !program.hasBlockchain);
