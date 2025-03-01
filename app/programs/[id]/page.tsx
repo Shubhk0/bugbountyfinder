@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { FaArrowLeft, FaExternalLinkAlt, FaHackerNews, FaBug, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 
 // Mock data for program details
+
 const programsData = [
   {
     id: 1,
@@ -84,6 +85,15 @@ const programsData = [
   }
 ];
 
+// changes done here below
+export async function generateStaticParams() {
+  const programs = await fetchPrograms(); // Replace with your actual data fetching function
+
+  return programs.map((program) => ({
+    id: program.id.toString(), // Convert ID to string
+  }));
+}
+//changes done here above
 export default function ProgramDetailPage() {
   const { id } = useParams();
   const programId = parseInt(id as string);
