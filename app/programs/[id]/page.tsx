@@ -3,9 +3,15 @@
 import { useParams, notFound } from 'next/navigation';
 import Link from 'next/link';
 import { FaArrowLeft, FaExternalLinkAlt, FaHackerNews, FaBug, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
-import { generateStaticParams } from "@/lib/programs"; // Import function
+import { fetchPrograms, Program  } from "@/lib/api"; // Import function
 // Mock data for program details
-
+export async function generateStaticParams() {
+  const programs = await fetchPrograms();
+  
+  return programs.map((program) => ({
+    id: program.id.toString(),
+  }));
+}
 const programsData = [
   {
     id: 1,
