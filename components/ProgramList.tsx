@@ -200,7 +200,8 @@ export default function ProgramList() {
   const currentPrograms = sortedPrograms.slice(indexOfFirstProgram, indexOfLastProgram);
   const totalPages = Math.ceil(programs.length / programsPerPage);
   
-  const toggleSort = (field) => {
+  //const toggleSort = (field) => {
+  const toggleSort = (field: string) => {
     if (sortBy === field) {
       setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
     } else {
