@@ -211,7 +211,8 @@ export default function ProgramList() {
   };
   
   // Platform icon component
-  const PlatformIcon = ({ platform }) => {
+  //const PlatformIcon = ({ platform }) => {
+  const PlatformIcon = ({ platform }: { platform: string }) => {
     return platform === 'HackerOne' ? 
       <FaHackerNews className="inline mr-1" /> : 
       <FaBug className="inline mr-1" />;
