@@ -185,7 +185,8 @@ export default function ProgramList() {
         ? complexityOrder[a.complexity] - complexityOrder[b.complexity] 
         : complexityOrder[b.complexity] - complexityOrder[a.complexity];
     } else if (sortBy === 'minBounty') {
-      const getAmount = (str) => parseInt(str.replace(/[^0-9]/g, ''));
+      //const getAmount = (str) => parseInt(str.replace(/[^0-9]/g, ''));
+      const getAmount = (str: string) => parseInt(str.replace(/[^0-9]/g, ''));
       return sortOrder === 'asc' 
         ? getAmount(a.minBounty) - getAmount(b.minBounty) 
         : getAmount(b.minBounty) - getAmount(a.minBounty);
