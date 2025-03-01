@@ -196,4 +196,4 @@ async function scrapeHackerOnePrograms(): Promise<Program[]> {
   }
 }
 
-export { searchProgramsByKeyword }
+//export { searchProgramsByKeyword }
