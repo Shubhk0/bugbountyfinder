@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 250, 250, 250;
+  --primary-color: 37, 99, 235;
+  --secondary-color: 107, 33, 168;
+  --accent-color: 234, 88, 12;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 15, 23, 42;
+    --primary-color: 59, 130, 246;
+    --secondary-color: 139, 92, 246;
+    --accent-color: 249, 115, 22;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, rgb(var(--primary-color)), rgb(var(--secondary-color)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.complexity-low {
+  background-color: rgba(34, 197, 94, 0.2);
+  color: rgb(22, 163, 74);
+}
+
+.complexity-medium {
+  background-color: rgba(234, 179, 8, 0.2);
+  color: rgb(202, 138, 4);
+}
+
+.complexity-high {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: rgb(220, 38, 38);
+}
