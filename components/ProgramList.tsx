@@ -179,7 +179,8 @@ export default function ProgramList() {
         ? a.name.localeCompare(b.name) 
         : b.name.localeCompare(a.name);
     } else if (sortBy === 'complexity') {
-      const complexityOrder = { 'Low': 1, 'Medium': 2, 'High': 3 };
+      //const complexityOrder = { 'Low': 1, 'Medium': 2, 'High': 3 };
+      const complexityOrder: Record<string, number> = { Low: 1, Medium: 2, High: 3 };
       return sortOrder === 'asc' 
         ? complexityOrder[a.complexity] - complexityOrder[b.complexity] 
         : complexityOrder[b.complexity] - complexityOrder[a.complexity];
