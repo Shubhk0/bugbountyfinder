@@ -1,10 +1,5 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-module.exports = nextConfig;
-
 module.exports = {
-  future: {
+  experimental: {
     webpack5: true,
   },
   webpack: (config) => {
